@@ -1,0 +1,178 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <title>Premium Site</title>
+  </head>
+  <style>
+    :root {
+  --color-primary: #0073ff;
+  --color-white: #e9e9e9;
+  --color-black: #141d28;
+  --color-black-1: #212b38;
+}
+body{
+  background-image:url({{url_for('static',filename='bg.jpg')}});
+  background-position: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+ 
+}
+
+.logo {
+  color: var(--color-white);
+  font-size: 30px;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+.menu-bar {
+  background-color: var(--color-black);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+
+  position: relative;
+}
+
+.menu-bar ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu-bar ul li {
+  /* width: 120px; */
+  padding: 10px 30px;
+  /* text-align: center; */
+
+  position: relative;
+}
+
+.menu-bar ul li a {
+  font-size: 20px;
+  color: var(--color-white);
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+.menu-bar ul li a:hover {
+  color: var(--color-primary);
+}
+
+.fas {
+  float: right;
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+/* dropdown menu style */
+.dropdown-menu {
+  display: none;
+}
+
+.menu-bar ul li:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: var(--color-black);
+}
+
+.menu-bar ul li:hover .dropdown-menu ul {
+  display: block;
+  margin: 10px;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul li {
+  width: 150px;
+  padding: 10px;
+}
+
+.dropdown-menu-1 {
+  display: none;
+}
+
+.dropdown-menu ul li:hover .dropdown-menu-1 {
+  display: block;
+  position: absolute;
+  left: 150px;
+  top: 0;
+  background-color: var(--color-black);
+}
+
+.hero {
+  height: calc(100vh - 80px);
+  
+}
+.prem .par{
+  padding-left: 80px;
+  padding-bottom: 25px;
+  font-family:sans-serif;
+  letter-spacing: 1.2px;
+  line-height: 50px;
+  margin-right: 350px;
+  margin-left: 150px;
+  margin-top:200px;
+  color:black;
+  padding-top:30px;
+  font-size:29px;
+  
+  
+}
+
+  </style>
+  <body>
+    <div class="menu-bar">
+      <h1 class="logo">Demand<span>-Est</span></h1>
+      <ul>
+        <li><a href="home">Home</a></li>
+        
+        <li><a href="#">Services <i class="fas fa-caret-down"></i></a>
+
+            <div class="dropdown-menu">
+                <ul>
+                  <li><a href="pricing">Pricing</a></li>
+                  <li><a href="todo">To-Do list</a></li>
+                  <li>
+                    <a href="offer">Offers </a>
+                    
+                    
+                  </li>
+                  
+                </ul>
+              </div>
+        </li>
+        <li><a href="https://datahack.analyticsvidhya.com/contest/genpact-machine-learning-hackathon-1/">Blog</a>
+        </li>
+        <li><a href="contact">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="prem">
+       <p class="par">
+        <span id="welcome">Welcome to premium user page !!! </span><br>
+        We appreciate your efforts for claiming our subscription :)<br>
+        You can now explore the new features and offers which are<br>
+        exclusively open for premium users like you !<br>
+        Do not forget to grab our festive season<br>
+        offers in a while..:)
+
+       </p>
+    </div>
+  </body>
+</html>

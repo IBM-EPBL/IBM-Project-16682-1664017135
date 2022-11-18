@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Offers</title>
+<style>
+	.cards {
+    margin-right:25%;
+    margin-left:25%;
+    margin-top: 5%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+    font-family: sans-serif;
+    padding-top: 30px;
+}
+body{
+    background: #5ccef4; 
+    background: -moz-linear-gradient(90deg, #5ccef4 0%, rgba(199,74,233,1) 100%); 
+    background: -webkit-linear-gradient(90deg, #5ccef4 0%, rgba(199,74,233,1) 100%);
+    background: linear-gradient(90deg, #5ccef4 0%, rgba(199,74,233,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e94ca1",endColorstr="#c74ae9",GradientType=1);
+	background-image:url({{url_for('static',filename='register.jpg')}});
+}
+
+.cards * {
+    box-sizing: border-box;
+}
+.card__image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+    
+}
+.card__content {
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background: #fafafa;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+.card__content > p:first-of-type {
+    margin-top: 0;
+}
+
+.card__content > p:last-of-type {
+    margin-bottom: 0;
+}
+.card__info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    background: #5ccef4;
+    font-size: 0.8em;
+    border-bottom: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+.card__info i {
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+.card__link {
+    color: black;
+    text-decoration: none;
+}
+.card__link:hover {
+    text-decoration: underline;
+}
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: yellow;
+    color: black;
+    margin-left: 320px;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-top: 50px;
+}
+a{
+	border: #5ccef4;
+	color: black;
+	font-size: medium;
+}
+</style>
+</head>
+<body>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<div class="cards">
+	  <div class="card">
+		<img class="card__image" src="{{url_for('static', filename='offer.jpeg')}}" height="400px" width="300px" alt="">
+		<div class="card__content">
+		  <p>
+			Upto 30% discount on your predictions !<br>
+			Only limited coupons available...Hurry up to  grab yours' soon
+		  </p>
+		  <p>
+			Use the below code to avail this offer...
+		  </p>
+		</div>
+		<div class="card__info">
+		  <div>
+			<i class="material-icons">thumb_up</i>310
+		  </div>
+		  <div>
+			<a href="./" class="card__link">Offer Code-3446</a>
+		  </div>
+		</div>
+	  </div>
+	  <div class="card">
+		<img class="card__image" src="{{url_for('static', filename='offer1.jpeg')}}" height="400px" width="300px" alt="">
+		<div class="card__content">
+		  <p>
+			 Excited for upcoming festive seasons ??
+		  </p>
+		  <p>
+			DemandEst provides you exciting offers for this festive period.. <br>
+			Claim your offers using the code below :)
+		  </p>
+		</div>
+		<div class="card__info">
+		  <div>
+			<i class="material-icons">thumb_up</i>1,993
+		  </div>
+		  <div>
+			<a href="./" class="card__link">Offer Code-3447</a>
+		  </div>
+		</div>
+	  </div>
+	  <div class="card">
+		<img class="card__image" src="{{url_for('static', filename='offer2.png')}}" height="400px" width="300px" alt="">
+		<div class="card__content">
+		  <p>
+			Lucky Cashbacks and redeem vouchers are on your way! 
+		  </p>
+		  <p>
+			Apply and See If you are the lucky winner of the day and luck awaits :)<br>
+			
+		Redeem using the code given below ..
+	</p>  
+		</div>
+		<div class="card__info">
+		  <div>
+			<i class="material-icons">thumb_up</i>887
+		  </div>
+		  <div>
+			<a href="./" class="card__link">Offer Code-3448</a>
+		  </div>
+		</div>
+	  </div>
+	  <a href="pay">REDEEM NOW !</a> 
+	</body>
+	</html>

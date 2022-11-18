@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  background: -moz-linear-gradient(90deg, #5ccef4 0%, rgba(199,74,233,1) 100%);
+background: -webkit-linear-gradient(90deg, #5ccef4 0%, rgba(199,74,233,1) 100%);
+background: linear-gradient(90deg, #5ccef4 0%, rgba(199,74,233,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e94ca1",endColorstr="#c74ae9",GradientType=1);
+
+}
+img {
+  margin-left: 60%;
+  margin-top: -1500px;
+
+}
+
+.container form{
+  padding:20px;
+  width:700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #2ecc71;
+  color:black;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+  background: #2ecc71;
+}
+.container form .row .col .inputBox1 select{
+  border:1px solid #000;
+}
+</style>
+<body>
+
+<div class="container">
+
+    <form action="{{ url_for('predict') }}" method="POST">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">PREDICTION FORM</h3>
+              
+                <div class="inputBox">
+                    <span>Home_Page Featured </span>
+                    <select id="homepage_featured" name="homepage_featured">
+                        <option value="">homepage_featured</option>
+                           <option value="0">No</option>
+                           <option value="1">Yes</option>
+                         </select>
+                </div>
+
+                <div class="inputBox">
+                    <span>Email For Promotion </span>
+                    <select id="emailer_for_promotion" name="emailer_for_promotion">
+                        <option value="">emailer_for_promotion</option>
+                           <option value="0">No</option>
+                           <option value="1">Yes</option>
+                       
+                         </select>
+                </div>
+                <div class="inputBox1">
+                    <span>Select Cuisine</span><br>
+                    <select name="cuisine" id="cuisine">
+                        <option value="#">Select</option>
+                        <option value="0">INDIAN</option>
+                        <option value="1">CHINESE</option>
+                        <option value="2">CONTINENTAL</option>
+                        <option value="3">ITALIAN</option>
+                    </select><br>
+                </div>
+                <div class="col">
+                  <h3 class="title"></h3>
+                  <img src="{{url_for('static', filename='man.png')}}" width="400px" height="230px"/>
+              </div>
+
+                <div class="inputBox">
+                    <span> Operational Area</span>
+                    <input type="number" placeholder="(2-7)">
+                </div>
+                <div class="inputBox">
+                    <span> Region Code :</span>
+                    <input type="number" placeholder="123">
+                </div>
+                <div class="inputBox">
+                    <span> City Code :</span>
+                    <input type="number" placeholder="77">
+                </div>
+                </div>
+                <div class="inputBox">
+                    <span>Category</span>
+                    <select id="category" name="category">
+                        <option value="">Choose Category</option>
+                            <option value="0">Beverages</option>
+                            <option value="1">Biryani</option>
+                            <option value="2">Desert</option>
+                            <option value="3">Extras</option>
+                            <option value="4">Fish</option>
+                            <option value="5">Other Snacks</option>
+                            <option value="6">Pasta</option>
+                            <option value="7">Pizza</option>
+                            <option value="8">Rice Bowl</option>
+                            <option value="9">Salad</option>
+                            <option value="10">Sandwich</option>
+                            <option value="11">Seafood</option>
+                            <option value="12">Soup</option>
+                            <option value="13">Starters</option>
+                          </select>
+                        </div>
+                        
+                </div>
+                
+                <input type="submit" value="PREDICT" class="submit-btn">
+                <h1 class="predict">Number of orders: {{ prediction_text }}</h1>
+            </div>
+           
+            
+    </form>
+   
+</div> 
+  
+    
+</body>
+</html>
